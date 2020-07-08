@@ -55,7 +55,7 @@ public class CauldronFluidHandler implements IFluidHandler {
   @Nonnull
   @Override
   public FluidStack getFluidInTank(int tank) {
-    if (!validate() || tank == 0) {
+    if (!validate() || tank != 0) {
       return FluidStack.EMPTY;
     }
     int amount = 333 * getFluidLevel();
