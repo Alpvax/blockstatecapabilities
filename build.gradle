@@ -33,7 +33,7 @@ minecraft {
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
     runs {
-        client {
+        /*client {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
@@ -44,6 +44,23 @@ minecraft {
 
             mods {
                 blockstatecapabilities {
+                    source sourceSets.main
+                }
+            }
+        }*/
+
+        client {
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                blockstatecapabilities_test {
+                    source sourceSets.test
                     source sourceSets.main
                 }
             }
